@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>API文档</title>
+    <link type="text/css" href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link type="text/css" href="../bootstrap/css/bootstrap-theme.css" rel="stylesheet">
+    <link type="text/css" href="../css/main.css" rel="stylesheet">
+    <script type="text/javascript" src="../jquery/jquery.js"></script>
+    <script type="text/javascript" src="../bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <link rel="stylesheet" href="../prism/css/prism.css">
+    <script src="../prism/js/prism.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div role="navigation" class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle collapsed"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="#" class="navbar-brand">百度通告帮助文档</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#">产品演示</a></li>
+            <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">快速入门<span class="caret"></span></a>
+              <ul role="menu" class="dropdown-menu">
+                <li class="dropdown-header">通用</li>
+                <li><a href="#registry">注册</a></li>
+                <li><a href="#login">登陆</a></li>
+                <li><a href="#setaccount">设置账号</a></li>
+                <li><a href="#contact">添加联系人</a></li>
+                <li><a href="#group">创建组</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">运维</li>
+                <li><a href="#policy">配置通告规则</a></li>
+                <li><a href="#service">创建服务</a></li>
+                <li><a href="#incident">管理故障</a></li>
+                <li><a href="#dashboard">仪表盘</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">其他</li>
+                <li><a href="#groupsender">通告群发</a><a href="#">验证码服务</a><a href="#">轮值</a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">API<span class="caret"></span></a>
+              <ul role="menu" class="dropdown-menu">
+                <li><a href="#pushevent">推送事件</a></li>
+                <li><a href="#pushnotice">推送消息</a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">SDK<span class="caret"></span></a>
+              <ul role="menu" class="dropdown-menu">
+                <li><a href="#">PHP</a></li>
+                <li> <a href="#">推送事件</a></li>
+                <li><a href="#">推送消息</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Java</a></li>
+                <li><a href="#">推送事件</a></li>
+                <li><a href="#">推送消息</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Python</a></li>
+                <li><a href="#">推送事件</a></li>
+                <li><a href="#">推送消息</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="http://tonggao.baidu.com">返回首页</a></li>
+          </ul>
+        </div>
+        <!-- /.nav-collapse-->
+      </div>
+    </div>
+    <div role="main" class="container df-container theme-showcase">
+      <div id="pushevent" class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">推送事件 API</h3>
+        </div>
+        <div class="panel-body">
+          <p>URL - POST http://tonggao.baidu.com/event/create</p>
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>参数名</th>
+                  <th>类型</th>
+                  <th>必须</th>
+                  <th>说明</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>servicekey</td>
+                  <td>string</td>
+                  <td>是</td>
+                  <td>API访问服务时需要的key，在服务详情页面生成，<span class="label label-danger">需放入http头部</span>，请参见 &nbsp;<a href="http://tonggao.baidu.com/service/index">服务管理</a></td>
+                </tr>
+                <tr>
+                  <td>service_id</td>
+                  <td>int</td>
+                  <td>是</td>
+                  <td>在 百度通告 》个人中心 》 服务管理 子菜单下创建服务所获得的id，请参见&nbsp;<a href="http://tonggao.baidu.com/service/index">服务管理</a></td>
+                </tr>
+                <tr>
+                  <td>description</td>
+                  <td>string</td>
+                  <td>是</td>
+                  <td>事件描述，请任意填写</td>
+                </tr>
+                <tr>
+                  <td>event_type</td>
+                  <td>enum</td>
+                  <td>是</td>
+                  <td>暂时是定值，请填写"trigger"</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <P>示例 - JavaScript</P>
+          <pre><code class="language-javascript">$.ajax({
+    url  : 'http://tonggao.baidu.com/event/create',
+    type : 'POST',
+    data : {
+        service_id  : 148,                                // 在百度通告 》个人中心 》 服务管理 子菜单下创建服务所获得的id
+        description : 'This is the event description.',   // 事件描述，请任意填写
+        event_type  : 'trigger'
+    }
+    headers : {
+        servicekey : '297461439da05be33e63901c050b268c',  // API访问服务时需要的key，在服务详情页面生成
+    }.
+});</code></pre>
+          <P>示例 - bash</P>
+          <pre><code class="language-bash">#!/bin/bash
+curl -H 'servicekey:297461439da05be33e63901c050b268c' -X POST -d '{"service_id":148,"description":"This is the event description.","event_type":"trigger"}' \
+http://tonggao.baidu.com/event/create</code></pre>
+          <p>返回值 - &nbsp;<span class="text-muted">status: 200 OK</span></p>
+          <pre><code class="language-javascript">{
+    "status": true,
+    "message": "ok",
+    "data": {
+        "event": {                                                // 推送事件成功后生成的事件对象
+            "id": 172,
+            "incident_id": 366,                                   // 与该事件关联的故障id
+            "service_id": 148,                                    // 与该事件关联的故障所属的服务id
+            "event_type": "trigger",                              // 事件类型
+            "description": "This is the event description.",      // 事件描述
+            "create_time": "2014-09-17 15:48:42",
+            "update_time": "2014-09-17 15:48:42",
+        }
+    }
+}</code></pre>
+        </div>
+      </div>
+      <div id="pushnotice" class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">推送消息 API</h3>
+        </div>
+        <div class="panel-body">
+          <p>URL - POST http://tonggao.baidu.com/AlertList/push</p>
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>参数名</th>
+                  <th>类型</th>
+                  <th>必须</th>
+                  <th>说明</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>appid</td>
+                  <td>string</td>
+                  <td>是</td>
+                  <td>应用id，由系统管理员分配，<span class="label label-danger">需放入http头部</span></td>
+                </tr>
+                <tr>
+                  <td>token</td>
+                  <td>string</td>
+                  <td>是</td>
+                  <td>应用访问所需的token，由系统管理员分配，<span class="label label-danger">需放入http头部</span></td>
+                </tr>
+                <tr>
+                  <td>signature</td>
+                  <td>string</td>
+                  <td>是</td>
+                  <td>request签名，<span class="label label-danger">需放入http头部</span></td>
+                </tr>
+                <tr>
+                  <td>useid</td>
+                  <td>int</td>
+                  <td>是</td>
+                  <td>应用消费消息配额的user信息，默认为0&nbsp;<span class="label label-danger">需放入http头部</span></td>
+                </tr>
+                <tr>
+                  <td>channel</td>
+                  <td>enum('sms', 'phone', 'email')</td>
+                  <td>是</td>
+                  <td>推送消息的类型</td>
+                </tr>
+                <tr>
+                  <td>description</td>
+                  <td>string</td>
+                  <td>是</td>
+                  <td>推送消息的内容，channel='sms'|'email'时有效</td>
+                </tr>
+                <tr>
+                  <td>title</td>
+                  <td>string</td>
+                  <td>否</td>
+                  <td>推送消息的标题，channel='sms'时有效</td>
+                </tr>
+                <tr>
+                  <td>receiver</td>
+                  <td>string</td>
+                  <td>是</td>
+                  <td>channel='sms'|'phone'时请填写手机号码，channel='email'时请填写邮箱地址</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <P>示例 - JavaScript</P>
+          <pre><code class="language-javascript">$.ajax({
+    url  : 'http://tonggao.baidu.com/AlertList/push',
+    type : 'POST',
+    data : [
+        {
+            channel      : "phone",
+            description  : "This is a telephone call notice.",
+            receiver     : "139****1234"
+        },
+        {
+            channel      : "sms",
+            description  : "This is a sms notice.",
+            receiver     : "139****1234"
+        },
+        {
+            channel      : "email",
+            title        : "This is a email notice title",
+            description  : "This is a email notice body.",
+            receiver     : "139****1234"
+        }
+    ]
+    headers : {
+        appid  : 'xxxx',                                          // 应用id，由系统管理员分配
+        token  : 'ODk4NzM0ZGNiYjkwODBhYmRiY2JjODRjY2Q4M2E1MmY=',  // 应用访问所需的token，由系统管理员分配
+        userid : 123,                                             // 应用消费消息配额的user信息，默认为0
+    }.
+});</code></pre>
+          <P>示例 - bash</P>
+          <pre><code class="language-bash">#!/bin/bash
+curl -H "appid:xxxx" -H "token:ODk4NzM0ZGNiYjkwODBhYmRiY2JjODRjY2Q4M2E1MmY=" -H "useid:0" \
+         -H "signature:3d47821b6667aeccd66914a1fc99c20a" -X POST \         # 128位签名
+         -d '[{"channel":"phone","description":"This is a telephone call notice.","receiver":"139****1234"},{"channel":"sms","description":"This is a sms notice.","receiver":"139****1234"},{"channel":"email","title":"This is a email notice title.","description":"This is a email notice body.","receiver":"tonggao@baidu.com"}]' \
+http://tonggao.baidu.com/AlertList/push</code></pre>
+          <p>返回值 - &nbsp;<span class="text-muted">status: 200 OK</span></p>
+          <pre><code class="language-javascript">{
+    "return": true,
+    "message": "ok",
+    "data": {
+        "consume": {                  // 本次请求对配额的消耗情况
+            "sms": 1,                 // 本次请求消耗掉短信1条
+            "email": 1,               // 本次请求消耗掉邮件1封
+            "phone": 1,               // 本次请求消耗掉电话1通
+            "hi": 0
+        }
+    }
+}</code></pre>
+        </div>
+      </div>
+    </div>
+    <div id="footer" class="footer">
+      <div class="container">
+        <div class="row">
+          <h1>联系我们</h1>
+        </div>
+        <div style="font-size:14px" class="row">
+          <div class="col-sm-4 col-md-4 col-lg-4">
+            <p style="font-size:30px"><span class="glyphicon glyphicon-phone-alt">&nbsp;</span></p><abbr title="Phone">
+              电话:
+              (+86) 139-2460-0771</abbr>
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4">
+            <p style="font-size:30px"><span class="glyphicon glyphicon-home">&nbsp;</span></p>深圳市南山区科技中三路5号国人通信大厦B座4F
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4">
+            <p style="font-size:30px"><span class="glyphicon glyphicon-envelope">&nbsp;</span></p><a href="mailto:#">tonggao@baidu.com</a>
+          </div>
+        </div>
+        <div class="row">
+          <p class="text-muted">Copyright © 2014 by Baidu. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

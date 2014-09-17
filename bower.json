@@ -1,0 +1,20 @@
+{
+  "name": "bellringer-doc",
+  "version": "1.0.0",
+  "authors": [
+    "dingman081130 <dingman081130@gmail.com>"
+  ],
+  "description": "This is a project for bellringer documentation",
+  "license": "MIT",
+  "homepage": "http://tonggao.baidu.com/doc/index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.2.0"
+  }
+}

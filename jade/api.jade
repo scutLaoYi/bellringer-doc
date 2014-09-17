@@ -1,0 +1,207 @@
+//- index.jade
+extends ./layout.jade
+
+block title
+  title API文档
+
+block content
+  .container.df-container.theme-showcase(role='main')
+    //- h1 推送故障API
+    div.panel.panel-default#pushevent
+      div.panel-heading
+        h3.panel-title 推送事件 API
+        //- span.text-muted.pull-right http://tonggao.baidu.com/event/create
+      div.panel-body
+        p URL - POST http://tonggao.baidu.com/event/create
+        div.table-responsive
+          table.table
+            thead
+              tr
+                th 参数名
+                th 类型
+                th 必须
+                th 说明
+            tbody
+              tr
+                td servicekey
+                td string
+                td 是
+                td API访问服务时需要的key，在服务详情页面生成，
+                  span.label.label-danger 需放入http头部
+                  ，请参见 &nbsp;
+                  a(href="http://tonggao.baidu.com/service/index") 服务管理
+              tr
+                td service_id
+                td int
+                td 是
+                td 在 百度通告 》个人中心 》 服务管理 子菜单下创建服务所获得的id，请参见&nbsp;
+                  a(href="http://tonggao.baidu.com/service/index") 服务管理
+              tr
+                td description
+                td string
+                td 是
+                td 事件描述，请任意填写
+              tr
+                td event_type
+                td enum
+                td 是
+                td 暂时是定值，请填写"trigger"
+        P 示例 - JavaScript
+        pre
+          code.language-javascript
+            | $.ajax({
+            |     url  : 'http://tonggao.baidu.com/event/create',
+            |     type : 'POST',
+            |     data : {
+            |         service_id  : 148,                                // 在百度通告 》个人中心 》 服务管理 子菜单下创建服务所获得的id
+            |         description : 'This is the event description.',   // 事件描述，请任意填写
+            |         event_type  : 'trigger'
+            |     }
+            |     headers : {
+            |         servicekey : '297461439da05be33e63901c050b268c',  // API访问服务时需要的key，在服务详情页面生成
+            |     }.
+            | });
+        P 示例 - bash
+        pre
+          code.language-bash
+            | #!/bin/bash
+            | curl -H 'servicekey:297461439da05be33e63901c050b268c' -X POST -d '{"service_id":148,"description":"This is the event description.","event_type":"trigger"}' \
+            | http://tonggao.baidu.com/event/create
+
+        p 返回值 - &nbsp;
+          span.text-muted status: 200 OK
+        pre
+          code.language-javascript
+            | {
+            |     "status": true,
+            |     "message": "ok",
+            |     "data": {
+            |         "event": {                                                // 推送事件成功后生成的事件对象
+            |             "id": 172,
+            |             "incident_id": 366,                                   // 与该事件关联的故障id
+            |             "service_id": 148,                                    // 与该事件关联的故障所属的服务id
+            |             "event_type": "trigger",                              // 事件类型
+            |             "description": "This is the event description.",      // 事件描述
+            |             "create_time": "2014-09-17 15:48:42",
+            |             "update_time": "2014-09-17 15:48:42",
+            |         }
+            |     }
+            | }
+    div.panel.panel-default#pushnotice
+      div.panel-heading
+        h3.panel-title 推送消息 API
+        //- span.text-muted.pull-right http://tonggao.baidu.com/event/create
+      div.panel-body
+        p URL - POST http://tonggao.baidu.com/AlertList/push
+        div.table-responsive
+          table.table
+            thead
+              tr
+                th 参数名
+                th 类型
+                th 必须
+                th 说明
+            tbody
+              tr
+                td appid
+                td string
+                td 是
+                td 应用id，由系统管理员分配，
+                  span.label.label-danger 需放入http头部
+              tr
+                td token
+                td string
+                td 是
+                td 应用访问所需的token，由系统管理员分配，
+                  span.label.label-danger 需放入http头部
+              tr
+                td signature
+                td string
+                td 是
+                td request签名，
+                  span.label.label-danger 需放入http头部
+              tr
+                td useid
+                td int
+                td 是
+                td 应用消费消息配额的user信息，默认为0&nbsp;
+                  span.label.label-danger 需放入http头部
+              tr
+                td channel
+                td enum('sms', 'phone', 'email')
+                td 是
+                td 推送消息的类型
+              tr
+                td description
+                td string
+                td 是
+                td 推送消息的内容，channel='sms'|'email'时有效
+              tr
+                td title
+                td string
+                td 否
+                td 推送消息的标题，channel='sms'时有效
+              tr
+                td receiver
+                td string
+                td 是
+                td channel='sms'|'phone'时请填写手机号码，channel='email'时请填写邮箱地址
+
+
+        P 示例 - JavaScript
+        pre
+          code.language-javascript
+            | $.ajax({
+            |     url  : 'http://tonggao.baidu.com/AlertList/push',
+            |     type : 'POST',
+            |     data : [
+            |         {
+            |             channel      : "phone",
+            |             description  : "This is a telephone call notice.",
+            |             receiver     : "139****1234"
+            |         },
+            |         {
+            |             channel      : "sms",
+            |             description  : "This is a sms notice.",
+            |             receiver     : "139****1234"
+            |         },
+            |         {
+            |             channel      : "email",
+            |             title        : "This is a email notice title",
+            |             description  : "This is a email notice body.",
+            |             receiver     : "139****1234"
+            |         }
+            |     ]
+            |     headers : {
+            |         appid  : 'xxxx',                                          // 应用id，由系统管理员分配
+            |         token  : 'ODk4NzM0ZGNiYjkwODBhYmRiY2JjODRjY2Q4M2E1MmY=',  // 应用访问所需的token，由系统管理员分配
+            |         userid : 123,                                             // 应用消费消息配额的user信息，默认为0
+            |     }.
+            | });
+        P 示例 - bash
+        pre
+          code.language-bash
+            | #!/bin/bash
+            | curl -H "appid:xxxx" -H "token:ODk4NzM0ZGNiYjkwODBhYmRiY2JjODRjY2Q4M2E1MmY=" -H "useid:0" \
+            |          -H "signature:3d47821b6667aeccd66914a1fc99c20a" -X POST \         # 128位签名
+            |          -d '[{"channel":"phone","description":"This is a telephone call notice.","receiver":"139****1234"},{"channel":"sms","description":"This is a sms notice.","receiver":"139****1234"},{"channel":"email","title":"This is a email notice title.","description":"This is a email notice body.","receiver":"tonggao@baidu.com"}]' \
+            | http://tonggao.baidu.com/AlertList/push
+
+        p 返回值 - &nbsp;
+          span.text-muted status: 200 OK
+        pre
+          code.language-javascript
+            | {
+            |     "return": true,
+            |     "message": "ok",
+            |     "data": {
+            |         "consume": {                  // 本次请求对配额的消耗情况
+            |             "sms": 1,                 // 本次请求消耗掉短信1条
+            |             "email": 1,               // 本次请求消耗掉邮件1封
+            |             "phone": 1,               // 本次请求消耗掉电话1通
+            |             "hi": 0
+            |         }
+            |     }
+            | }
+
+

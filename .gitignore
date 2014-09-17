@@ -26,3 +26,9 @@ node_modules
 
 # Users Environment Variables
 .lock-wscript
+
+bower_components/
+dist/.DS_Store
+
+dist/img/incident.mov
+dist/img/incident.mp4

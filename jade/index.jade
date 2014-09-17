@@ -1,0 +1,206 @@
+//- index.jade
+extends ./layout.jade
+
+
+
+block title
+  title 快速入门
+
+block content
+
+  .container.df-container.theme-showcase(role='main')
+    // Main jumbotron for a primary marketing message or call to action
+    .jumbotron
+      .row
+        div.col-xs-12.col-sm-12.col-md-12.col-lg-4
+          h1 百度通告!
+          p
+          p
+          p.df-intro
+            | 百度通告平台是一款即时消息推送类产品，它旨在通过语音电话、短信、邮件、百度Hi及第三方社交、通讯类渠道保证对消息及时、准确、无遗漏地传送。并基于多种渠道构建运维事件管理、报警升级、通告群发、轮值和验证码等应用与服务。
+          .df-icon
+            span.glyphicon.glyphicon-phone-alt
+            span.glyphicon-class &nbsp;&nbsp;电话通告
+            span.glyphicon.glyphicon-ok.pull-right
+          .df-icon
+            span.glyphicon.glyphicon-comment
+            span.glyphicon-class &nbsp;&nbsp;短信通告
+            span.glyphicon.glyphicon-ok.pull-right
+          .df-icon
+            span.glyphicon.glyphicon-envelope
+            span.glyphicon-class &nbsp;&nbsp;邮件通告
+            span.glyphicon.glyphicon-ok.pull-right
+          .df-icon
+            span.glyphicon.glyphicon-export
+            span.glyphicon-class &nbsp;&nbsp;通告升级
+            span.glyphicon.glyphicon-ok.pull-right
+          .df-icon
+            span.glyphicon.glyphicon-send
+            span.glyphicon-class &nbsp;&nbsp;通告群发
+            span.glyphicon.glyphicon-ok.pull-right
+          .df-icon
+            span.glyphicon.glyphicon-tasks
+            span.glyphicon-class &nbsp;&nbsp;事件管理
+            span.glyphicon.glyphicon-ok.pull-right
+          .df-icon
+            span.glyphicon.glyphicon-calendar
+            span.glyphicon-class &nbsp;&nbsp;轮值服务
+          .df-icon  
+            span.glyphicon.glyphicon-repeat
+            span.glyphicon-class &nbsp;&nbsp;验证码服务
+            
+          p(style="margin-top:20px;")
+            a.btn.btn-primary.btn-lg.col-xs-12.col-sm-6.col-md-6.col-lg-12(href='http://tonggao.baidu.com', role='button') 点击进入 »
+        div.col-lg-8
+          div(style='text-align:center')
+            object#reader(width='575', height='500', align='right', codebase='http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0', classid='clsid:d27cdb6e-ae6d-11cf-96b8-444553540000')
+              param(value='window', name='wmode')
+              param(value='true', name='allowfullscreen')
+              param(name='allowscriptaccess', value='always')
+              param(value='http://wenku.baidu.com/static/flash/apireader.swf?docurl=http://wenku.baidu.com/play&docid=240c4202804d2b160b4ec087&title=%E7%99%BE%E5%BA%A6%E9%80%9A%E5%91%8A&doctype=ppt&fpn=5&npn=5&readertype=external&catal=0&cdnurl=http://txt.wenku.baidu.com/play', name='movie')
+              embed(width='575', align='right', height='500', pluginspage='http://www.macromedia.com/go/getflashplayer', type='application/x-shockwave-flash', name='reader', src='http://wenku.baidu.com/static/flash/apireader.swf?docurl=http://wenku.baidu.com/play&docid=240c4202804d2b160b4ec087&title=%E7%99%BE%E5%BA%A6%E9%80%9A%E5%91%8A&doctype=ppt&fpn=5&npn=5&readertype=external&catal=0&cdnurl=http://txt.wenku.baidu.com/play', wmode='window', allowscriptaccess='always', bgcolor='#FFFFFF', ver='9.0.0', allowfullscreen='true')
+
+    div.page-header#tutorial
+      h1 快速入门
+    .row#registry
+      .col-sm-6.col-md-6
+        .thumbnail.df-noborder
+          img(src='/img/registry.png', alt='注册')
+      .col-sm-6.col-md-6
+        div(style='margin-left:30%;margin-top:10%')
+          h1 注册
+          p 1. 打开浏览器
+          p 2. 输入http://tonggao.baidu.com
+          p 3. 点击页面右上角注册按钮进入注册页面
+          p 4. 完成注册
+          a.btn.btn-primary(href='http://tonggao.baidu.com/site/reg', role='button') 点击注册
+    .row#login
+      .col-sm-6.col-md-6
+        div(style='margin-left:30%;margin-top:10%')
+          h1 登陆
+          p 1. 打开浏览器
+          p 2. 输入http://tonggao.baidu.com
+          p 3. 点击页面右上角登陆按钮
+          p 4. 在弹出的浮层中完成登陆操作
+          a.btn.btn-primary(href='http://tonggao.baidu.com/site/index#/login', role='button') 点击登陆
+      .col-sm-6.col-md-6
+        .thumbnail.df-noborder
+          img(src='/img/login.png', alt='登陆')
+    .row#setaccount
+      .col-sm-6.col-md-6
+        .thumbnail.df-noborder
+          img(src='/img/setaccount.png', alt='设置账号')
+      .col-sm-6.col-md-6
+        div(style='margin-left:30%;margin-top:10%')
+          h1 设置账号
+          p 1. 登陆进入个人中心
+          p 2. 在账号设置子菜单下完成名称、头像、联系方式的设置
+          p 3. 为了确保联系方式的正确性，系统会发送验证码进行认证
+          a.btn.btn-primary(href='http://tonggao.baidu.com/user/index', role='button') 设置账号
+    .row#contact
+      .col-sm-6.col-md-6
+        div(style='margin-left:30%;margin-top:10%')
+          h1 添加联系人
+          p 1. 在通讯录子菜单常用联系人选项卡下填入被加人的注册邮箱
+          p 2. 点击导入
+          a.btn.btn-primary(href='http://tonggao.baidu.com/contact/index', role='button') 添加联系人
+      .col-sm-6.col-md-6
+        .thumbnail.df-noborder
+          img(src='/img/contact.png', alt='添加联系人')
+    .row#group
+      .col-sm-6.col-md-6
+        .thumbnail.df-noborder
+          img(src='/img/group.png', alt='创建组')
+      .col-sm-6.col-md-6
+        div(style='margin-left:30%;margin-top:10%')
+          h1 创建组
+          p 1. 在通讯录子菜单用户组选项卡下添加用户组
+          p 2. 填写名称，勾选需要加入进组的联系人
+          p 3. 点击保存用户组完成创建
+          a.btn.btn-primary(href='http://tonggao.baidu.com/usergroup/index', role='button') 创建组
+    .row#policy
+      .col-sm-6.col-md-6
+        div(style='margin-left:30%;margin-top:10%')
+          h1 创建通告规则
+          p 1. 在通告规则子菜单下点击添加通告规则按钮
+          p 2. 点击添加升级规则
+          p 3. 配置每一级别的通告接收人，通告接收方式和超时时间
+          p 4. 每一级别的通告接收人可以是用户组
+          a.btn.btn-primary(href='http://tonggao.baidu.com/policy/index', role='button') 创建通告规则
+      .col-sm-6.col-md-6
+        .thumbnail.df-noborder
+          img(src='/img/policy.png', alt='创建通告规则')
+    .row#service
+      .col-sm-6.col-md-6
+        .thumbnail.df-noborder
+          img(src='/img/service.png', alt='创建服务')
+      .col-sm-6.col-md-6
+        div(style='margin-left:30%;margin-top:10%')
+          h1 创建服务
+          p 1. 在服务管理子菜单下点击添加服务
+          p 2. 填写名称，选取该服务要采用的通告规则
+          p 3. 选择接入方式，目前只支持API和SDK两种方式
+          p 4. 点击提交完成服务创建
+          a.btn.btn-primary(href='http://tonggao.baidu.com/service/index', role='button') 创建服务
+    .row#incident
+      .col-sm-6.col-md-6
+        div(style='margin-left:30%;margin-top:10%')
+          h1 管理故障
+          p 1. 应用通过API/SDK将故障推送至百度通告
+          p 2. 交互式语音IVR、短信回复的方式变更故障状态
+          p 3. 查看故障Trace
+          p 4. 页面手动触发故障
+          a.btn.btn-primary(href='http://tonggao.baidu.com/incident/index', role='button') 管理故障
+      .col-sm-6.col-md-6
+        .thumbnail.df-noborder
+          img(src='/img/incident.png', alt='管理故障')
+    .row#dashboard
+      .col-sm-6.col-md-6
+        .thumbnail.df-noborder
+          img(src='/img/dashboard.png', alt='创建通告规则')
+      .col-sm-6.col-md-6
+        div(style='margin-left:30%;margin-top:10%')
+          h1 仪表盘
+          p 1. 分时查看服务的电话、短信、邮件消费柱状统计图
+          p 2. 分应用查看本周、本月、本年度通告消费总量与明细
+          a.btn.btn-primary(href='http://tonggao.baidu.com/dashboard/index', role='button') 查看仪表盘
+    .row#groupsender
+      .col-sm-6.col-md-6
+        div(style='margin-left:30%;margin-top:10%')
+          h1 群发通告
+          p 1. 在通告群发子菜单下勾选通告接收人和组
+          p 2. 勾选通告方式并填写通告内容
+          p 3. 点击发送
+          p 4. 查看通告群发历史记录
+          a.btn.btn-primary(href='http://tonggao.baidu.com/notice/index', role='button') 群发通告
+      .col-sm-6.col-md-6
+        .thumbnail.df-noborder
+          img(src='/img/groupsender.png', alt='创建服务')
+
+
+
+
+    //- .row
+    //-   .col-sm-8.col-md-8
+    //-     //- .thumbnail
+    //-     div.embed-responsive.embed-responsive-16by9
+    //-       iframe.embed-responsive-item(src='http://player.youku.com/embed/XNzg0MDkzMDUy', frameborder='0', allowfullscreen='')
+
+    //- .videoUiWrapper.thumbnail
+    //-   video#demo1(width='370', height='214')
+    //-     //- source(src='pathtovideo/video.ogv', type='video/ogg')
+    //-     source(src='/img/incident.mov', type='video/mp4')
+    //-     | Your browser does not support the video tag.
+
+    //- video(width='640', height='480', preload controls)
+    //-   source(src='/img/incident.mp4', type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
+      //- source(src='/img/incident.webm', type='video/webm; codecs="vp8, vorbis"')
+      //- source(src='myvideo.ogv', type='video/ogg; codecs="theora, vorbis"')
+
+    //- video(width='320', height='240', controls='')
+    //-   source(src='/img/incident.mp4', type='video/mp4')
+    //-   source(src='/img/incident.ogg', type='video/ogg')
+    //-   | Your browser does not support the video tag.
+
+
+

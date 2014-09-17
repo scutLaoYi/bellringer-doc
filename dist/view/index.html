@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>快速入门</title>
+    <link type="text/css" href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link type="text/css" href="../bootstrap/css/bootstrap-theme.css" rel="stylesheet">
+    <link type="text/css" href="../css/main.css" rel="stylesheet">
+    <script type="text/javascript" src="../jquery/jquery.js"></script>
+    <script type="text/javascript" src="../bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <link rel="stylesheet" href="../prism/css/prism.css">
+    <script src="../prism/js/prism.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div role="navigation" class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle collapsed"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="#" class="navbar-brand">百度通告帮助文档</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#">产品演示</a></li>
+            <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">快速入门<span class="caret"></span></a>
+              <ul role="menu" class="dropdown-menu">
+                <li class="dropdown-header">通用</li>
+                <li><a href="#registry">注册</a></li>
+                <li><a href="#login">登陆</a></li>
+                <li><a href="#setaccount">设置账号</a></li>
+                <li><a href="#contact">添加联系人</a></li>
+                <li><a href="#group">创建组</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">运维</li>
+                <li><a href="#policy">配置通告规则</a></li>
+                <li><a href="#service">创建服务</a></li>
+                <li><a href="#incident">管理故障</a></li>
+                <li><a href="#dashboard">仪表盘</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">其他</li>
+                <li><a href="#groupsender">通告群发</a><a href="#">验证码服务</a><a href="#">轮值</a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">API<span class="caret"></span></a>
+              <ul role="menu" class="dropdown-menu">
+                <li><a href="#pushevent">推送事件</a></li>
+                <li><a href="#pushnotice">推送消息</a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">SDK<span class="caret"></span></a>
+              <ul role="menu" class="dropdown-menu">
+                <li><a href="#">PHP</a></li>
+                <li> <a href="#">推送事件</a></li>
+                <li><a href="#">推送消息</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Java</a></li>
+                <li><a href="#">推送事件</a></li>
+                <li><a href="#">推送消息</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Python</a></li>
+                <li><a href="#">推送事件</a></li>
+                <li><a href="#">推送消息</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="http://tonggao.baidu.com">返回首页</a></li>
+          </ul>
+        </div>
+        <!-- /.nav-collapse-->
+      </div>
+    </div>
+    <div role="main" class="container df-container theme-showcase">
+      <!-- Main jumbotron for a primary marketing message or call to action-->
+      <div class="jumbotron">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+            <h1>百度通告!</h1>
+            <p></p>
+            <p></p>
+            <p class="df-intro">百度通告平台是一款即时消息推送类产品，它旨在通过语音电话、短信、邮件、百度Hi及第三方社交、通讯类渠道保证对消息及时、准确、无遗漏地传送。并基于多种渠道构建运维事件管理、报警升级、通告群发、轮值和验证码等应用与服务。</p>
+            <div class="df-icon"><span class="glyphicon glyphicon-phone-alt"></span><span class="glyphicon-class">&nbsp;&nbsp;电话通告</span><span class="glyphicon glyphicon-ok pull-right"></span></div>
+            <div class="df-icon"><span class="glyphicon glyphicon-comment"></span><span class="glyphicon-class">&nbsp;&nbsp;短信通告</span><span class="glyphicon glyphicon-ok pull-right"></span></div>
+            <div class="df-icon"><span class="glyphicon glyphicon-envelope"></span><span class="glyphicon-class">&nbsp;&nbsp;邮件通告</span><span class="glyphicon glyphicon-ok pull-right"></span></div>
+            <div class="df-icon"><span class="glyphicon glyphicon-export"></span><span class="glyphicon-class">&nbsp;&nbsp;通告升级</span><span class="glyphicon glyphicon-ok pull-right"></span></div>
+            <div class="df-icon"><span class="glyphicon glyphicon-send"></span><span class="glyphicon-class">&nbsp;&nbsp;通告群发</span><span class="glyphicon glyphicon-ok pull-right"></span></div>
+            <div class="df-icon"><span class="glyphicon glyphicon-tasks"></span><span class="glyphicon-class">&nbsp;&nbsp;事件管理</span><span class="glyphicon glyphicon-ok pull-right"></span></div>
+            <div class="df-icon"><span class="glyphicon glyphicon-calendar"></span><span class="glyphicon-class">&nbsp;&nbsp;轮值服务</span></div>
+            <div class="df-icon"> <span class="glyphicon glyphicon-repeat"></span><span class="glyphicon-class">&nbsp;&nbsp;验证码服务</span></div>
+            <p style="margin-top:20px;"><a href="http://tonggao.baidu.com" role="button" class="btn btn-primary btn-lg col-xs-12 col-sm-6 col-md-6 col-lg-12">点击进入 »</a></p>
+          </div>
+          <div class="col-lg-8">
+            <div style="text-align:center">
+              <object id="reader" width="575" height="500" align="right" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000">
+                <param value="window" name="wmode">
+                <param value="true" name="allowfullscreen">
+                <param name="allowscriptaccess" value="always">
+                <param value="http://wenku.baidu.com/static/flash/apireader.swf?docurl=http://wenku.baidu.com/play&amp;docid=240c4202804d2b160b4ec087&amp;title=%E7%99%BE%E5%BA%A6%E9%80%9A%E5%91%8A&amp;doctype=ppt&amp;fpn=5&amp;npn=5&amp;readertype=external&amp;catal=0&amp;cdnurl=http://txt.wenku.baidu.com/play" name="movie">
+                <embed width="575" align="right" height="500" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="reader" src="http://wenku.baidu.com/static/flash/apireader.swf?docurl=http://wenku.baidu.com/play&amp;docid=240c4202804d2b160b4ec087&amp;title=%E7%99%BE%E5%BA%A6%E9%80%9A%E5%91%8A&amp;doctype=ppt&amp;fpn=5&amp;npn=5&amp;readertype=external&amp;catal=0&amp;cdnurl=http://txt.wenku.baidu.com/play" wmode="window" allowscriptaccess="always" bgcolor="#FFFFFF" ver="9.0.0" allowfullscreen="true">
+              </object>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="tutorial" class="page-header">
+        <h1>快速入门</h1>
+      </div>
+      <div id="registry" class="row">
+        <div class="col-sm-6 col-md-6">
+          <div class="thumbnail df-noborder"><img src="/img/registry.png" alt="注册"></div>
+        </div>
+        <div class="col-sm-6 col-md-6">
+          <div style="margin-left:30%;margin-top:10%">
+            <h1>注册</h1>
+            <p>1. 打开浏览器</p>
+            <p>2. 输入http://tonggao.baidu.com</p>
+            <p>3. 点击页面右上角注册按钮进入注册页面</p>
+            <p>4. 完成注册</p><a href="http://tonggao.baidu.com/site/reg" role="button" class="btn btn-primary">点击注册</a>
+          </div>
+        </div>
+      </div>
+      <div id="login" class="row">
+        <div class="col-sm-6 col-md-6">
+          <div style="margin-left:30%;margin-top:10%">
+            <h1>登陆</h1>
+            <p>1. 打开浏览器</p>
+            <p>2. 输入http://tonggao.baidu.com</p>
+            <p>3. 点击页面右上角登陆按钮</p>
+            <p>4. 在弹出的浮层中完成登陆操作</p><a href="http://tonggao.baidu.com/site/index#/login" role="button" class="btn btn-primary">点击登陆</a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-6">
+          <div class="thumbnail df-noborder"><img src="/img/login.png" alt="登陆"></div>
+        </div>
+      </div>
+      <div id="setaccount" class="row">
+        <div class="col-sm-6 col-md-6">
+          <div class="thumbnail df-noborder"><img src="/img/setaccount.png" alt="设置账号"></div>
+        </div>
+        <div class="col-sm-6 col-md-6">
+          <div style="margin-left:30%;margin-top:10%">
+            <h1>设置账号</h1>
+            <p>1. 登陆进入个人中心</p>
+            <p>2. 在账号设置子菜单下完成名称、头像、联系方式的设置</p>
+            <p>3. 为了确保联系方式的正确性，系统会发送验证码进行认证</p><a href="http://tonggao.baidu.com/user/index" role="button" class="btn btn-primary">设置账号</a>
+          </div>
+        </div>
+      </div>
+      <div id="contact" class="row">
+        <div class="col-sm-6 col-md-6">
+          <div style="margin-left:30%;margin-top:10%">
+            <h1>添加联系人</h1>
+            <p>1. 在通讯录子菜单常用联系人选项卡下填入被加人的注册邮箱</p>
+            <p>2. 点击导入</p><a href="http://tonggao.baidu.com/contact/index" role="button" class="btn btn-primary">添加联系人</a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-6">
+          <div class="thumbnail df-noborder"><img src="/img/contact.png" alt="添加联系人"></div>
+        </div>
+      </div>
+      <div id="group" class="row">
+        <div class="col-sm-6 col-md-6">
+          <div class="thumbnail df-noborder"><img src="/img/group.png" alt="创建组"></div>
+        </div>
+        <div class="col-sm-6 col-md-6">
+          <div style="margin-left:30%;margin-top:10%">
+            <h1>创建组</h1>
+            <p>1. 在通讯录子菜单用户组选项卡下添加用户组</p>
+            <p>2. 填写名称，勾选需要加入进组的联系人</p>
+            <p>3. 点击保存用户组完成创建</p><a href="http://tonggao.baidu.com/usergroup/index" role="button" class="btn btn-primary">创建组</a>
+          </div>
+        </div>
+      </div>
+      <div id="policy" class="row">
+        <div class="col-sm-6 col-md-6">
+          <div style="margin-left:30%;margin-top:10%">
+            <h1>创建通告规则</h1>
+            <p>1. 在通告规则子菜单下点击添加通告规则按钮</p>
+            <p>2. 点击添加升级规则</p>
+            <p>3. 配置每一级别的通告接收人，通告接收方式和超时时间</p>
+            <p>4. 每一级别的通告接收人可以是用户组</p><a href="http://tonggao.baidu.com/policy/index" role="button" class="btn btn-primary">创建通告规则</a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-6">
+          <div class="thumbnail df-noborder"><img src="/img/policy.png" alt="创建通告规则"></div>
+        </div>
+      </div>
+      <div id="service" class="row">
+        <div class="col-sm-6 col-md-6">
+          <div class="thumbnail df-noborder"><img src="/img/service.png" alt="创建服务"></div>
+        </div>
+        <div class="col-sm-6 col-md-6">
+          <div style="margin-left:30%;margin-top:10%">
+            <h1>创建服务</h1>
+            <p>1. 在服务管理子菜单下点击添加服务</p>
+            <p>2. 填写名称，选取该服务要采用的通告规则</p>
+            <p>3. 选择接入方式，目前只支持API和SDK两种方式</p>
+            <p>4. 点击提交完成服务创建</p><a href="http://tonggao.baidu.com/service/index" role="button" class="btn btn-primary">创建服务</a>
+          </div>
+        </div>
+      </div>
+      <div id="incident" class="row">
+        <div class="col-sm-6 col-md-6">
+          <div style="margin-left:30%;margin-top:10%">
+            <h1>管理故障</h1>
+            <p>1. 应用通过API/SDK将故障推送至百度通告</p>
+            <p>2. 交互式语音IVR、短信回复的方式变更故障状态</p>
+            <p>3. 查看故障Trace</p>
+            <p>4. 页面手动触发故障</p><a href="http://tonggao.baidu.com/incident/index" role="button" class="btn btn-primary">管理故障</a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-6">
+          <div class="thumbnail df-noborder"><img src="/img/incident.png" alt="管理故障"></div>
+        </div>
+      </div>
+      <div id="dashboard" class="row">
+        <div class="col-sm-6 col-md-6">
+          <div class="thumbnail df-noborder"><img src="/img/dashboard.png" alt="创建通告规则"></div>
+        </div>
+        <div class="col-sm-6 col-md-6">
+          <div style="margin-left:30%;margin-top:10%">
+            <h1>仪表盘</h1>
+            <p>1. 分时查看服务的电话、短信、邮件消费柱状统计图</p>
+            <p>2. 分应用查看本周、本月、本年度通告消费总量与明细</p><a href="http://tonggao.baidu.com/dashboard/index" role="button" class="btn btn-primary">查看仪表盘</a>
+          </div>
+        </div>
+      </div>
+      <div id="groupsender" class="row">
+        <div class="col-sm-6 col-md-6">
+          <div style="margin-left:30%;margin-top:10%">
+            <h1>群发通告</h1>
+            <p>1. 在通告群发子菜单下勾选通告接收人和组</p>
+            <p>2. 勾选通告方式并填写通告内容</p>
+            <p>3. 点击发送</p>
+            <p>4. 查看通告群发历史记录</p><a href="http://tonggao.baidu.com/notice/index" role="button" class="btn btn-primary">群发通告</a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-6">
+          <div class="thumbnail df-noborder"><img src="/img/groupsender.png" alt="创建服务"></div>
+        </div>
+      </div>
+    </div>
+    <div id="footer" class="footer">
+      <div class="container">
+        <div class="row">
+          <h1>联系我们</h1>
+        </div>
+        <div style="font-size:14px" class="row">
+          <div class="col-sm-4 col-md-4 col-lg-4">
+            <p style="font-size:30px"><span class="glyphicon glyphicon-phone-alt">&nbsp;</span></p><abbr title="Phone">
+              电话:
+              (+86) 139-2460-0771</abbr>
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4">
+            <p style="font-size:30px"><span class="glyphicon glyphicon-home">&nbsp;</span></p>深圳市南山区科技中三路5号国人通信大厦B座4F
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4">
+            <p style="font-size:30px"><span class="glyphicon glyphicon-envelope">&nbsp;</span></p><a href="mailto:#">tonggao@baidu.com</a>
+          </div>
+        </div>
+        <div class="row">
+          <p class="text-muted">Copyright © 2014 by Baidu. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

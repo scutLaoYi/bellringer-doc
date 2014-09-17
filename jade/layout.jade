@@ -1,0 +1,122 @@
+//- layout.jade
+doctype html
+html(lang="en")
+  head
+    block title
+      title Default title
+    link(type="text/css" href="../bootstrap/css/bootstrap.css" rel="stylesheet")
+    link(type="text/css" href="../bootstrap/css/bootstrap-theme.css" rel="stylesheet")
+    link(type="text/css" href="../css/main.css" rel="stylesheet")
+    //- link(href='/bootstrap-video/css/video-default.css', rel='stylesheet')
+    script(type="text/javascript" src="../jquery/jquery.js")
+    script(type="text/javascript" src="../bootstrap/js/bootstrap.js")
+    //- script(type='text/javascript', src='/bootstrap-video/js/jquery.video-ui.js')
+    script(type="text/javascript" src="../js/main.js")
+    link(rel='stylesheet', href='../prism/css/prism.css')
+    script(src='../prism/js/prism.js')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+  body
+    div.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+      div.container
+        div.navbar-header
+          button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='#') 百度通告帮助文档
+        div.navbar-collapse.collapse
+          ul.nav.navbar-nav
+            li
+              a(href='#') 产品演示
+            li.dropdown
+              a.dropdown-toggle(href='#', data-toggle='dropdown')
+                | 快速入门
+                span.caret
+              ul.dropdown-menu(role='menu')
+                li.dropdown-header 通用
+                li
+                  a(href='#registry') 注册
+                li
+                  a(href='#login') 登陆
+                li
+                  a(href='#setaccount') 设置账号
+                li
+                  a(href='#contact') 添加联系人
+                li
+                  a(href='#group') 创建组
+                li.divider
+                li.dropdown-header 运维
+                li
+                  a(href='#policy') 配置通告规则
+                li
+                  a(href='#service') 创建服务
+                li
+                  a(href='#incident') 管理故障
+                li
+                  a(href='#dashboard') 仪表盘
+                li.divider
+                li.dropdown-header 其他
+                li
+                  a(href='#groupsender') 通告群发
+                  a(href='#') 验证码服务
+                  a(href='#') 轮值
+            li.dropdown
+              a.dropdown-toggle(href='#', data-toggle='dropdown')
+                | API
+                span.caret
+              ul.dropdown-menu(role='menu')
+                li
+                  a(href='#pushevent') 推送事件
+                li
+                  a(href='#pushnotice') 推送消息
+            li.dropdown
+              a.dropdown-toggle(href='#', data-toggle='dropdown')
+                | SDK
+                span.caret
+              ul.dropdown-menu(role='menu')
+                li
+                  a(href='#') PHP
+                li  
+                  a(href='#') 推送事件
+                li
+                  a(href='#') 推送消息
+                li.divider
+                li
+                  a(href='#') Java
+                li
+                  a(href='#') 推送事件
+                li
+                  a(href='#') 推送消息
+                li.divider
+                li
+                  a(href='#') Python
+                li
+                  a(href='#') 推送事件
+                li
+                  a(href='#') 推送消息
+          ul.nav.navbar-nav.navbar-right
+            li.active
+              a(href='http://tonggao.baidu.com') 返回首页
+        // /.nav-collapse
+    block content
+    div.footer#footer
+      div.container
+        .row
+          h1 联系我们
+        .row(style="font-size:14px")
+          div.col-sm-4.col-md-4.col-lg-4
+            p(style="font-size:30px")
+              span.glyphicon.glyphicon-phone-alt &nbsp;
+            abbr(title='Phone') 电话:
+              | (+86) 139-2460-0771
+          div.col-sm-4.col-md-4.col-lg-4
+            p(style="font-size:30px")
+              span.glyphicon.glyphicon-home &nbsp;
+            深圳市南山区科技中三路5号国人通信大厦B座4F
+          div.col-sm-4.col-md-4.col-lg-4
+            p(style="font-size:30px")
+              span.glyphicon.glyphicon-envelope &nbsp;
+            a(href='mailto:#') tonggao@baidu.com
+        .row
+          p.text-muted Copyright © 2014 by Baidu. All Rights Reserved.
