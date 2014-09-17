@@ -14,6 +14,7 @@ module.exports = function(grunt) {
         files: {
           'dist/view/index.html': 'jade/index.jade',
           'dist/view/api.html': 'jade/api.jade',
+          'dist/view/sdk.html': 'jade/sdk.jade'
         }
       }
     },

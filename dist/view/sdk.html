@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>API文档</title>
+    <link type="text/css" href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link type="text/css" href="../bootstrap/css/bootstrap-theme.css" rel="stylesheet">
+    <link type="text/css" href="../css/main.css" rel="stylesheet">
+    <script type="text/javascript" src="../jquery/jquery.js"></script>
+    <script type="text/javascript" src="../bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <link rel="stylesheet" href="../prism/css/prism.css">
+    <script src="../prism/js/prism.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div role="navigation" class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle collapsed"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="#" class="navbar-brand">百度通告帮助文档</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#">产品演示</a></li>
+            <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">快速入门<span class="caret"></span></a>
+              <ul role="menu" class="dropdown-menu">
+                <li class="dropdown-header">通用</li>
+                <li><a href="#registry">注册</a></li>
+                <li><a href="#login">登陆</a></li>
+                <li><a href="#setaccount">设置账号</a></li>
+                <li><a href="#contact">添加联系人</a></li>
+                <li><a href="#group">创建组</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">运维</li>
+                <li><a href="#policy">配置通告规则</a></li>
+                <li><a href="#service">创建服务</a></li>
+                <li><a href="#incident">管理故障</a></li>
+                <li><a href="#dashboard">仪表盘</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">其他</li>
+                <li><a href="#groupsender">通告群发</a><a href="#">验证码服务</a><a href="#">轮值</a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">API<span class="caret"></span></a>
+              <ul role="menu" class="dropdown-menu">
+                <li><a href="#pushevent">推送事件</a></li>
+                <li><a href="#pushnotice">推送消息</a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">SDK<span class="caret"></span></a>
+              <ul role="menu" class="dropdown-menu">
+                <li><a href="#">PHP</a></li>
+                <li> <a href="#">推送事件</a></li>
+                <li><a href="#">推送消息</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Java</a></li>
+                <li><a href="#">推送事件</a></li>
+                <li><a href="#">推送消息</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Python</a></li>
+                <li><a href="#">推送事件</a></li>
+                <li><a href="#">推送消息</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="http://tonggao.baidu.com">返回首页</a></li>
+          </ul>
+        </div>
+        <!-- /.nav-collapse-->
+      </div>
+    </div>
+    <div role="main" class="container df-container theme-showcase">
+      <div id="phpsdk" class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">PHP SDK</h3>
+        </div>
+        <div class="panel-body">
+          <p>下载</p>
+          <pre><code class="language-bash">$ wget http://tonggao.baidu.com/plugins/tonggao_sdk_php.phar</code></pre>
+          <p>安装</p>
+          <pre><code class="language-bash">$ mv tonggao_sdk_php.phar /path/to/wherever/you/like/</code></pre>
+          <p>使用 - 推送事件</p>
+          <pre><code class="language-php">require 'phar://tonggao_sdk_php.phar/sdk.php';            // 导入SDK
+$service_id  = '';                                        // 在百度通告 》个人中心 》 服务管理 子菜单下创建服务所获得的id
+$service_key = '';                                        // API访问服务时需要的key，在服务详情页面生成
+incident_client = new TonggaoIncident($service_id,$service_key);
+//trigger incident
+$incident_client->triggerIncident("This is the event description.");</code></pre>
+          <p>使用 - 推送消息</p>
+          <pre><code class="language-php">require 'phar://tonggao_sdk_php.phar/sdk.php';            // 导入SDK
+$appId = '';                                              // 应用id，由系统管理员分配，需放入http头部
+$token = '';                                              // 应用访问所需的token，由系统管理员分配
+$qudao_client = new TonggaoNotice($appId, $token);
+$qudao_client->sendMessage('email', "tonggao@baidu.com", "here is email body", "here is email title");
+$qudao_client->sendMessage('SMS', "139****1234", "here is sms message");
+$qudao_client->sendMessage('phone', "139****1234");</code></pre>
+        </div>
+      </div>
+      <div id="pythonsdk" class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Python SDK</h3>
+        </div>
+        <div class="panel-body">
+          <p>下载</p>
+          <pre><code class="language-bash">$ wget http://tonggao.baidu.com/plugins/tonggao_sdk_python.tar.gz</code></pre>
+          <p>安装</p>
+          <pre><code class="language-bash">$ tar -zxvf tonggao_sdk_python.tar.gz  /path/to/wherever/you/like</code></pre>
+          <p>使用 - 推送事件</p>
+          <pre><code class="language-python">#!/usr/bin/env python
+#encoding=utf-8
+import tonggao_sdk_py
+if "__main__" == __name__:
+   serviceId = ""                                         # 在百度通告 》个人中心 》 服务管理 子菜单下创建服务所获得的id
+   serviceKey =""                                         # API访问服务时需要的key，在服务详情页面生成
+   tonggaoIncident = tonggao_sdk_py.TonggaoIncident(serviceId,serviceKey)
+   #trigger incident
+   tonggaoIncident.triggerIncident("This is the event description.")</code></pre>
+          <p>使用 - 推送消息</p>
+          <pre><code class="language-python">#!/usr/bin/env python
+#encoding=utf-8
+import tonggao_sdk_py
+if "__main__" == __name__:
+   #set your appId and token
+   appId  = ""                                              # 应用id，由系统管理员分配，需放入http头部
+   token = ""                                               # 应用访问所需的token，由系统管理员分配，需放入http头部
+   tonggaoNotice = tonggao_sdk_py.TonggaoNotice(appId, token)
+   # sendMessage
+   tonggaoNotice.sendMessage("email", "liurongcheng@baidu.com", "here is email body", "here is email title")
+   tonggaoNotice.sendMessage("sms", "139****1234", "here is sms message")
+   tonggaoNotice.sendMessage("phone", "139****1234")</code></pre>
+        </div>
+      </div>
+      <div id="javasdk" class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Java SDK</h3>
+        </div>
+        <div class="panel-body">
+          <p>下载</p>
+          <pre><code class="language-bash">$ wget http://tonggao.baidu.com/plugins/tonggao_sdk_java-1.0-SNAPSHOT.jar</code></pre>
+          <p>安装</p>
+          <div class="well well-sm">
+            在Eclipse右键工程 -> Properties -> Java Build Path -> Add JARs 。
+            选择tonggao_sdk_java-1.0-SNAPSHOT.jar件。你就可以在工程中使用tonggao JAVA SDK了。
+          </div>
+          <p>使用 - 推送事件</p>
+          <pre><code class="language-java">// import the need class
+import com.baidu.szop.bellringer.sdk.TonggaoIncident;
+public class Test {
+    public  static void  main(String[] args) throws  Exception{
+      // set your serviceId  and serviceKey
+       int serviceId = 0;                                   // 在百度通告 》个人中心 》 服务管理 子菜单下创建服务所获得的id
+       String serviceKey ="";                               // 应用访问所需的token，由系统管理员分配
+       TonggaoIncident tonggaoIncident = new TonggaoIncident(serviceId,serviceKey);
+       //trigger incident
+       tonggaoIncident.triggerIncident("This is the event description.");
+   }
+}</code></pre>
+          <p>使用 - 推送消息</p>
+          <pre><code class="language-java">// import the need class
+import com.baidu.szop.bellringer.sdk.TonggaoNotice;
+import com.baidu.szop.bellringer.sdk.util.SendType;
+import com.baidu.szop.bellringer.sdk.TonggaoNotice;
+import com.baidu.szop.bellringer.sdk.util.SendType;
+public class Test {
+    public  static void  main(String[] args) throws  Exception{
+        // set your appId and token
+        String appId  = "";
+        String token = "";
+        // sendweb端
+        TonggaoNotice tonggaoNotice = new TonggaoNotice(appId, token);
+        //接受人可以是list
+        // sendMessage
+        tonggaoNotice.sendMessage(SendType.EMAIl,"tonggao@baidu.com","here is email body", "here is email title");
+        tonggaoNotice.sendMessage(SendType.SMS,"139****1234","Message",null);
+        tonggaoNotice.sendMessage(SendType.PHONE,"139****1234",null,null);
+    }
+}</code></pre>
+        </div>
+      </div>
+    </div>
+    <div id="footer" class="footer">
+      <div class="container">
+        <div class="row">
+          <h1>联系我们</h1>
+        </div>
+        <div style="font-size:14px" class="row">
+          <div class="col-sm-4 col-md-4 col-lg-4">
+            <p style="font-size:30px"><span class="glyphicon glyphicon-phone-alt">&nbsp;</span></p><abbr title="Phone">
+              电话:
+              (+86) 139-2460-0771</abbr>
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4">
+            <p style="font-size:30px"><span class="glyphicon glyphicon-home">&nbsp;</span></p>深圳市南山区科技中三路5号国人通信大厦B座4F
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4">
+            <p style="font-size:30px"><span class="glyphicon glyphicon-envelope">&nbsp;</span></p><a href="mailto:#">tonggao@baidu.com</a>
+          </div>
+        </div>
+        <div class="row">
+          <p class="text-muted">Copyright © 2014 by Baidu. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

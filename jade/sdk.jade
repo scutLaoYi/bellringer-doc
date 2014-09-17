@@ -1,0 +1,135 @@
+//- index.jade
+extends ./layout.jade
+
+block title
+  title API文档
+
+block content
+  .container.df-container.theme-showcase(role='main')
+    //- h1 推送故障API
+    div.panel.panel-default#phpsdk
+      div.panel-heading
+        h3.panel-title PHP SDK
+        //- span.text-muted.pull-right http://tonggao.baidu.com/event/create
+      div.panel-body
+        p 下载
+        pre
+          code.language-bash
+            | $ wget http://tonggao.baidu.com/plugins/tonggao_sdk_php.phar
+        p 安装
+        pre
+          code.language-bash
+            | $ mv tonggao_sdk_php.phar /path/to/wherever/you/like/
+        p 使用 - 推送事件
+        pre
+          code.language-php
+            | require 'phar://tonggao_sdk_php.phar/sdk.php';            // 导入SDK
+            | $service_id  = '';                                        // 在百度通告 》个人中心 》 服务管理 子菜单下创建服务所获得的id
+            | $service_key = '';                                        // API访问服务时需要的key，在服务详情页面生成
+            | incident_client = new TonggaoIncident($service_id,$service_key);
+            | //trigger incident
+            | $incident_client->triggerIncident("This is the event description.");
+
+        p 使用 - 推送消息
+        pre
+          code.language-php
+            | require 'phar://tonggao_sdk_php.phar/sdk.php';            // 导入SDK
+            | $appId = '';                                              // 应用id，由系统管理员分配，需放入http头部
+            | $token = '';                                              // 应用访问所需的token，由系统管理员分配
+            | $qudao_client = new TonggaoNotice($appId, $token);
+            | $qudao_client->sendMessage('email', "tonggao@baidu.com", "here is email body", "here is email title");
+            | $qudao_client->sendMessage('SMS', "139****1234", "here is sms message");
+            | $qudao_client->sendMessage('phone', "139****1234");
+
+    div.panel.panel-default#pythonsdk
+      div.panel-heading
+        h3.panel-title Python SDK
+        //- span.text-muted.pull-right http://tonggao.baidu.com/event/create
+      div.panel-body
+        p 下载
+        pre
+          code.language-bash
+            | $ wget http://tonggao.baidu.com/plugins/tonggao_sdk_python.tar.gz
+        p 安装
+        pre
+          code.language-bash
+            | $ tar -zxvf tonggao_sdk_python.tar.gz  /path/to/wherever/you/like
+        p 使用 - 推送事件
+        pre
+          code.language-python
+            | #!/usr/bin/env python
+            | #encoding=utf-8
+            | import tonggao_sdk_py
+            | if "__main__" == __name__:
+            |    serviceId = ""                                         # 在百度通告 》个人中心 》 服务管理 子菜单下创建服务所获得的id
+            |    serviceKey =""                                         # API访问服务时需要的key，在服务详情页面生成
+            |    tonggaoIncident = tonggao_sdk_py.TonggaoIncident(serviceId,serviceKey)
+            |    #trigger incident
+            |    tonggaoIncident.triggerIncident("This is the event description.")
+        p 使用 - 推送消息
+        pre
+          code.language-python
+            | #!/usr/bin/env python
+            | #encoding=utf-8
+            | import tonggao_sdk_py
+            | if "__main__" == __name__:
+            |    #set your appId and token
+            |    appId  = ""                                              # 应用id，由系统管理员分配，需放入http头部
+            |    token = ""                                               # 应用访问所需的token，由系统管理员分配，需放入http头部
+            |    tonggaoNotice = tonggao_sdk_py.TonggaoNotice(appId, token)
+            |    # sendMessage
+            |    tonggaoNotice.sendMessage("email", "liurongcheng@baidu.com", "here is email body", "here is email title")
+            |    tonggaoNotice.sendMessage("sms", "139****1234", "here is sms message")
+            |    tonggaoNotice.sendMessage("phone", "139****1234")
+
+    div.panel.panel-default#javasdk
+      div.panel-heading
+        h3.panel-title Java SDK
+        //- span.text-muted.pull-right http://tonggao.baidu.com/event/create
+      div.panel-body
+        p 下载
+        pre
+          code.language-bash
+            | $ wget http://tonggao.baidu.com/plugins/tonggao_sdk_java-1.0-SNAPSHOT.jar
+        p 安装
+        .well.well-sm 
+          | 在Eclipse右键工程 -> Properties -> Java Build Path -> Add JARs 。
+          | 选择tonggao_sdk_java-1.0-SNAPSHOT.jar件。你就可以在工程中使用tonggao JAVA SDK了。
+        
+        p 使用 - 推送事件
+        pre
+          code.language-java
+            | // import the need class
+            | import com.baidu.szop.bellringer.sdk.TonggaoIncident;
+            | public class Test {
+            |     public  static void  main(String[] args) throws  Exception{
+            |       // set your serviceId  and serviceKey
+            |        int serviceId = 0;                                   // 在百度通告 》个人中心 》 服务管理 子菜单下创建服务所获得的id
+            |        String serviceKey ="";                               // 应用访问所需的token，由系统管理员分配
+            |        TonggaoIncident tonggaoIncident = new TonggaoIncident(serviceId,serviceKey);
+            |        //trigger incident
+            |        tonggaoIncident.triggerIncident("This is the event description.");
+            |    }
+            | }
+        p 使用 - 推送消息
+        pre
+          code.language-java
+            | // import the need class
+            | import com.baidu.szop.bellringer.sdk.TonggaoNotice;
+            | import com.baidu.szop.bellringer.sdk.util.SendType;
+            | import com.baidu.szop.bellringer.sdk.TonggaoNotice;
+            | import com.baidu.szop.bellringer.sdk.util.SendType;
+            | public class Test {
+            |     public  static void  main(String[] args) throws  Exception{
+            |         // set your appId and token
+            |         String appId  = "";
+            |         String token = "";
+            |         // sendweb端
+            |         TonggaoNotice tonggaoNotice = new TonggaoNotice(appId, token);
+            |         //接受人可以是list
+            |         // sendMessage
+            |         tonggaoNotice.sendMessage(SendType.EMAIl,"tonggao@baidu.com","here is email body", "here is email title");
+            |         tonggaoNotice.sendMessage(SendType.SMS,"139****1234","Message",null);
+            |         tonggaoNotice.sendMessage(SendType.PHONE,"139****1234",null,null);
+            |     }
+            | }
