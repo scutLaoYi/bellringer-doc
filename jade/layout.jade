@@ -2,6 +2,7 @@
 doctype html
 html(lang="en")
   head
+    meta(charset='UTF-8')
     block title
       title Default title
     link(type="text/css" href="../bootstrap/css/bootstrap.css" rel="stylesheet")
@@ -30,71 +31,71 @@ html(lang="en")
             li
               a(href='#') 产品演示
             li.dropdown
-              a.dropdown-toggle(href='#', data-toggle='dropdown')
+              a.dropdown-toggle(href='./index.html', data-toggle='dropdown')
                 | 快速入门
                 span.caret
               ul.dropdown-menu(role='menu')
                 li.dropdown-header 通用
                 li
-                  a(href='#registry') 注册
+                  a(href='./index.html#registry') 注册
                 li
-                  a(href='#login') 登陆
+                  a(href='./index.html#login') 登陆
                 li
-                  a(href='#setaccount') 设置账号
+                  a(href='./index.html#setaccount') 设置账号
                 li
-                  a(href='#contact') 添加联系人
+                  a(href='./index.html#contact') 添加联系人
                 li
-                  a(href='#group') 创建组
+                  a(href='./index.html#group') 创建组
                 li.divider
                 li.dropdown-header 运维
                 li
-                  a(href='#policy') 配置通告规则
+                  a(href='./index.html#policy') 配置通告规则
                 li
-                  a(href='#service') 创建服务
+                  a(href='./index.html#service') 创建服务
                 li
-                  a(href='#incident') 管理故障
+                  a(href='./index.html#incident') 管理故障
                 li
-                  a(href='#dashboard') 仪表盘
+                  a(href='./index.html#dashboard') 仪表盘
                 li.divider
                 li.dropdown-header 其他
                 li
-                  a(href='#groupsender') 通告群发
-                  a(href='#') 验证码服务
-                  a(href='#') 轮值
+                  a(href='./index.html#groupsender') 通告群发
+                  a(href='./index.html#') 验证码服务
+                  a(href='./index.html#') 轮值
             li.dropdown
-              a.dropdown-toggle(href='#', data-toggle='dropdown')
+              a.dropdown-toggle(href='./api.html', data-toggle='dropdown')
                 | API
                 span.caret
               ul.dropdown-menu(role='menu')
                 li
-                  a(href='#pushevent') 推送事件
+                  a(href='./api.html#pushevent') 推送事件
                 li
-                  a(href='#pushnotice') 推送消息
+                  a(href='./api.html#pushnotice') 推送消息
             li.dropdown
-              a.dropdown-toggle(href='#', data-toggle='dropdown')
+              a.dropdown-toggle(href='./sdk.html', data-toggle='dropdown')
                 | SDK
                 span.caret
               ul.dropdown-menu(role='menu')
                 li
-                  a(href='#') PHP
+                  a(href='./sdk.html#phpsdk') PHP
                 li  
-                  a(href='#') 推送事件
+                  a(href='./sdk.html#') 推送事件
                 li
-                  a(href='#') 推送消息
+                  a(href='./sdk.html##') 推送消息
                 li.divider
                 li
-                  a(href='#') Java
+                  a(href='./sdk.html##') Java
                 li
-                  a(href='#') 推送事件
+                  a(href='./sdk.html##') 推送事件
                 li
-                  a(href='#') 推送消息
+                  a(href='./sdk.html##') 推送消息
                 li.divider
                 li
-                  a(href='#') Python
+                  a(href='./sdk.html##') Python
                 li
-                  a(href='#') 推送事件
+                  a(href='./sdk.html##') 推送事件
                 li
-                  a(href='#') 推送消息
+                  a(href='./sdk.html##') 推送消息
           ul.nav.navbar-nav.navbar-right
             li.active
               a(href='http://tonggao.baidu.com') 返回首页
