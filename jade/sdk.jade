@@ -20,7 +20,7 @@ block content
         pre
           code.language-bash
             | $ mv tonggao_sdk_php.phar /path/to/wherever/you/like/
-        p 使用 - 推送事件
+        p#php_push_event 使用 - 推送事件
         pre
           code.language-php
             | require 'phar://tonggao_sdk_php.phar/sdk.php';            // 导入SDK
@@ -30,7 +30,7 @@ block content
             | //trigger incident
             | $incident_client->triggerIncident("This is the event description.");
 
-        p 使用 - 推送消息
+        p#php_push_notice 使用 - 推送消息
         pre
           code.language-php
             | require 'phar://tonggao_sdk_php.phar/sdk.php';            // 导入SDK
@@ -54,7 +54,7 @@ block content
         pre
           code.language-bash
             | $ tar -zxvf tonggao_sdk_python.tar.gz  /path/to/wherever/you/like
-        p 使用 - 推送事件
+        p#python_push_event 使用 - 推送事件
         pre
           code.language-python
             | #!/usr/bin/env python
@@ -66,7 +66,7 @@ block content
             |    tonggaoIncident = tonggao_sdk_py.TonggaoIncident(serviceId,serviceKey)
             |    #trigger incident
             |    tonggaoIncident.triggerIncident("This is the event description.")
-        p 使用 - 推送消息
+        p#python_push_notice 使用 - 推送消息
         pre
           code.language-python
             | #!/usr/bin/env python
@@ -96,7 +96,7 @@ block content
           | 在Eclipse右键工程 -> Properties -> Java Build Path -> Add JARs 。
           | 选择tonggao_sdk_java-1.0-SNAPSHOT.jar件。你就可以在工程中使用tonggao JAVA SDK了。
         
-        p 使用 - 推送事件
+        p#java_push_event 使用 - 推送事件
         pre
           code.language-java
             | // import the need class
@@ -111,7 +111,7 @@ block content
             |        tonggaoIncident.triggerIncident("This is the event description.");
             |    }
             | }
-        p 使用 - 推送消息
+        p#java_push_notice 使用 - 推送消息
         pre
           code.language-java
             | // import the need class
